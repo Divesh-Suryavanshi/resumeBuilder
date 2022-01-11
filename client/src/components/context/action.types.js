@@ -1,0 +1,2 @@
+export const INPUT_CHANGE = "INPUT_CHANGE"
+export const STEP_CHANGE = "STEP_CHANGE"
