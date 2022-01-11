@@ -30,6 +30,20 @@ const resumeData = {
         fOS : "Computer Science",
         sDate : "",
         eDate : ""
+    },
+
+    3 : {
+        name : "DSP",
+        desc : "A software project description should start with an overview that explains the type of software that will be developed, the problem it will solve, and the benefits to users and the business. The overview shouldn't focus on the technical aspects of the project, but instead on the final product and its benefits.",
+        name2: "",
+        desc2: ""
+    },
+
+    4 : {
+        position : "",
+        summary : "",
+        skills : "",
+        interests : ""
     }
 }
 

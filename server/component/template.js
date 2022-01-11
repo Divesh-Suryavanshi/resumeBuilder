@@ -9,7 +9,6 @@ module.exports = (values) => {
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-            // <link rel="stylesheet" href="./css/template1.css">
             <style>
                 * {
                 margin: 0;
@@ -160,10 +159,8 @@ module.exports = (values) => {
             </div>
             
             <div class="about">
-            <span class="position">Front-End Developer</span>
-            <span class="desc">
-                I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. 
-            </span>
+                <span class="position">${values['4'].position}</span>
+                <span class="desc">${values['4'].summary}</span>
             </div>
         </div>
         <div class="details">
@@ -172,25 +169,14 @@ module.exports = (values) => {
             <div class="section__list">
                 <div class="section__list-item">
                 <div class="left">
-                    <div class="name">${values['1'].cName}</div>
-                    <div class="addr">${values['1'].city}, ${values['1'].state}, ${values['1'].country}</div>
-                    <div class="duration">${values['1'].sDate} - ${values['1'].eDate}</div>
+                        <div class="name">${values['1'].cName}</div>
+                        <div class="addr">${values['1'].city}, ${values['1'].state}, ${values['1'].country}</div>
                 </div>
                 <div class="right">
-                    <div class="name">${values['1'].job}</div>
-                    <div class="desc">${values['1'].jobDesc}</div>
+                        <div class="name">${values['1'].job}</div>
+                        <div class="duration"><small>Sep 2020 - July 2024</small></div>
                 </div>
-                </div>
-                        <div class="section__list-item">
-                <div class="left">
-                    <div class="name">Akount</div>
-                    <div class="addr">San Monica, CA</div>
-                    <div class="duration">Jan 2011 - Feb 2015</div>
-                </div>
-                <div class="right">
-                    <div class="name">Fr developer</div>
-                    <div class="desc">did This and that</div>
-                </div>
+                <div class="desc" style="margin-top: 1rem">${values['1'].jobDesc}</div>
                 </div>
 
             </div>
@@ -201,23 +187,21 @@ module.exports = (values) => {
                 <div class="section__list-item">
                 <div class="left">
                     <div class="name">${values['2'].instituteName}</div>
-                    <div class="addr">San Fr, CA</div>
-                    <div class="duration">${values['2'].sDate} - ${values['2'].eDate}</div>
+                    <div class="addr">Meerut, Uttar Pradesh</div>
+                    <div class="duration"><small>Sep 2020 - July 2024</small></div>
                 </div>
                 <div class="right">
-                    <div class="name">Fr developer</div>
-                    <div class="desc">did This and that</div>
+                    <div class="name">${values['2'].degree} in ${values['2'].fOS}</div>
                 </div>
                 </div>
                 <div class="section__list-item">
                 <div class="left">
-                    <div class="name">Akount</div>
-                    <div class="addr">San Monica, CA</div>
-                    <div class="duration">Jan 2011 - Feb 2015</div>
+                    <div class="name">CVPS</div>
+                    <div class="addr">Meerut, Uttar Pradesh</div>
+                    <div class="duration"><small>Apr 2019 - Jun 2020</small></div>
                 </div>
                 <div class="right">
-                    <div class="name">Fr developer</div>
-                    <div class="desc">did This and that</div>
+                    <div class="name">Intermediate</div>
                 </div>
                 </div>
 
@@ -227,15 +211,14 @@ module.exports = (values) => {
             <div class="section">
             <div class="section__title">Projects</div> 
             <div class="section__list">
-                <div class="section__list-item">
-                <div class="name">DSP</div>
-                <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow.</div>
+                    <div class="section__list-item">
+                    <div class="name">${values['3'].name}</div>
+                    <div class="text">${values['3'].desc}</div>
                 </div>
                 
                 <div class="section__list-item">
-                            <div class="name">DSP</div>
-                <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. <a href="/login">link</a>
-                </div>
+                    <div class="name">${values['3'].name2}</div>
+                    <div class="text">${values['3'].desc2}</div>
                 </div>
             </div>
             </div>
@@ -243,17 +226,19 @@ module.exports = (values) => {
             <div class="section__title">Skills</div>
             <div class="skills">
                 <div class="skills__item">
-                <div class="left"><div class="name">
-                    Javascript
-                    </div></div>
+                <div class="left">
+                    <div class="name">
+                        MERN
+                    </div>
+                </div>
                 <div class="right">
-                                <input  id="ck1" type="checkbox" checked/>
+                                <input  id="ck1" type="checkbox" checked />
 
                     <label for="ck1"></label>
-                                <input id="ck2" type="checkbox" checked/>
+                                <input id="ck2" type="checkbox" checked />
 
                     <label for="ck2"></label>
-                                <input id="ck3" type="checkbox" />
+                                <input id="ck3" type="checkbox" checked />
 
                     <label for="ck3"></label>
                                 <input id="ck4" type="checkbox" />
@@ -293,7 +278,7 @@ module.exports = (values) => {
             </div>
             <div class="section__list">
                 <div class="section__list-item">
-                        Football, programming.
+                        ${values['4'].interests}
                 </div>
             </div>
             </div>

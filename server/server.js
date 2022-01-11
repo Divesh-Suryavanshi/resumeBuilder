@@ -6,8 +6,8 @@ const cors = require("cors")
 const pdf = require("html-pdf")
 
 const options = {
-	height: "42cm",
-	width: "29.7cm",
+	height: "35cm",
+	width: "21cm",
 	timeout: "6000",
 };
 
@@ -29,11 +29,11 @@ app.post("/api/world", (req, res) => {
 });
 
 app.post("/api/create-pdf", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const html = template(req.body);
-  console.log(html);
+  // console.log(html);
 
-  pdf.create(html).toFile(`Resume.pdf`, (err) => {
+  pdf.create(html, options).toFile(`Resume.pdf`, (err) => {
     if(err) {
       console.log(err);
       res.send(Promise.reject());

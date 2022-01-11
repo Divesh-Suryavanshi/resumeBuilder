@@ -32,7 +32,9 @@ const Heading = ({step, values, handleChange}) => {
                     <label for="inputState" className="form-label">State</label>
                     <select id="inputState" className="form-select">
                     <option>Choose State</option>
-                    <option value="">...</option>
+                    <option value="">DELHI</option>
+                    <option value="">RAJASTHAN</option>
+                    <option value="">UTTAR PRADESH</option>
                     </select>
                 </div>
                 <Row id="zip" label="Zip" sz="2"  value={values.zip} onChange={handleChange} />

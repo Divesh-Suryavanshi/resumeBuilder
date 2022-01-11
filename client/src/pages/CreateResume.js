@@ -4,6 +4,10 @@ import Theme from "../components/theme/Theme"
 import Heading from "../components/steps/Heading"
 import Experience from "../components/steps/Experience"
 import Education from '../components/steps/Education';
+import Projects from '../components/steps/Projects';
+import Final from '../components/steps/Final';
+
+
 // import ResumeContext from '../components/context/ResumeContext';
 import resumeData from '../components/context/resumeData';
 // import createPDF from '../core/createPDF';
@@ -34,7 +38,7 @@ export const CreateResume = () => {
         setStep(val);
     }
 
-    const Left = step * 50;
+    const Left = step * 25;
 
     const btnColor = (id) => {
         if(id <= step)
@@ -72,7 +76,7 @@ export const CreateResume = () => {
 
     let Button;
 
-    if(step === 2){
+    if(step === 4){
         Button = <div>
             <button type="submit" onClick={(e) => {handleClick(e, step -1)}} className="btn btn-primary my-3 me-3">Previous</button>
             <button type="submit" onClick={createPDF} className="btn btn-primary my-3 me-3">Download</button>
@@ -95,10 +99,10 @@ export const CreateResume = () => {
                     </div>
                     <button type="button" className="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary" style={{ height:"2rem",
                     background : `${btnColor(0)}`}} id = "0" onClick={() => {setStep(0)}}>Heading</button>
-                    <button type="button" className="position-absolute top-0 translate-middle btn btn-sm btn-primary" onClick={() => {setStep(1)}} id = "1" style={{height:"2rem", left: "50%", background : `${btnColor(1)}`}}>Experience</button>
-                    <button type="button" className="position-absolute top-0 translate-middle btn btn-sm btn-primary" onClick={() => {setStep(2)}} id = "2" style={{height:"2rem", left: "100%", background : `${btnColor(2)}`}}>Education</button>
-                    {/* <button type="button" className="position-absolute top-0 translate-middle btn btn-sm btn-secondary" onClick={() => {setStep(3)}} id = "3" style={{height: "2rem", left: "75%", background : `${btnColor(3)}`}}>Skills</button> */}
-                    {/* <button type="button" className="position-absolute top-0 translate-middle btn btn-sm btn-secondary" onClick={() => {setStep(4)}} id = "4" style={{height: "2rem", left: "100%", background : `${btnColor(4)}`}}>Summary</button> */}
+                    <button type="button" className="position-absolute top-0 translate-middle btn btn-sm btn-primary" onClick={() => {setStep(1)}} id = "1" style={{height:"2rem", left: "25%", background : `${btnColor(1)}`}}>Experience</button>
+                    <button type="button" className="position-absolute top-0 translate-middle btn btn-sm btn-primary" onClick={() => {setStep(2)}} id = "2" style={{height:"2rem", left: "50%", background : `${btnColor(2)}`}}>Education</button>
+                    <button type="button" className="position-absolute top-0 translate-middle btn btn-sm btn-secondary" onClick={() => {setStep(3)}} id = "3" style={{height: "2rem", left: "75%", background : `${btnColor(3)}`}}>Projects</button>
+                    <button type="button" className="position-absolute top-0 translate-middle btn btn-sm btn-secondary" onClick={() => {setStep(4)}} id = "4" style={{height: "2rem", left: "100%", background : `${btnColor(4)}`}}>Final</button>
                 </div>
 
                 <div className="p-3">
@@ -106,6 +110,8 @@ export const CreateResume = () => {
                         <Heading values={values['0']} step={step} handleChange={handleChange} />     
                         <Experience values={values['1']} step={step} handleChange={handleChange} />
                         <Education values={values['2']} step={step} handleChange={handleChange} />
+                        <Projects values={values['3']} step={step} handleChange={handleChange} />
+                        <Final values={values['4']} step={step} handleChange={handleChange} />
                         {/* <div className="right mx-2 d-none d-lg-block text-center col">iframe</div> */}
                     </div>
                     {/* { () => {
