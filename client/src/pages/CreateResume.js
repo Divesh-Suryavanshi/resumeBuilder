@@ -1,6 +1,6 @@
 import { React, useContext, useState} from 'react';
 // import Provider from '../components/Provider';
-import Theme from "../components/theme/Theme"
+// import Theme from "../components/theme/Theme"
 import Heading from "../components/steps/Heading"
 import Experience from "../components/steps/Experience"
 import Education from '../components/steps/Education';
@@ -10,9 +10,7 @@ import Final from '../components/steps/Final';
 
 // import ResumeContext from '../components/context/ResumeContext';
 import resumeData from '../components/context/resumeData';
-// import createPDF from '../core/createPDF';
-import axios from "axios";
-import {saveAs} from "file-saver"
+import createPDF from '../core/createPDF';
 
 // const Steps = {
 //     1 : <Heading />,
@@ -55,44 +53,25 @@ export const CreateResume = () => {
 
     const values = data;
 
-    const createPDF = () => {
-        axios
-            .post ('/api/create-pdf', data)
-            .then (() => {
-                axios
-                    .get ('/api/fetch-pdf', {responseType: 'arraybuffer'})
-                    .then (res => {
-                        const pdfBlob = new Blob ([res.data], {type: 'application/pdf'});
-                        saveAs (pdfBlob, `${data['0'].firstName}'s Resume.pdf`);
-                    })  
-                    .catch (err => {
-                        console.log (err);
-                    });
-            })
-            .catch (err => {
-                console.log (err);
-            });
-    };
-
-    let Button;
-
-    if(step === 4){
-        Button = <div>
-            <button type="submit" onClick={(e) => {handleClick(e, step -1)}} className="btn btn-primary my-3 me-3">Previous</button>
-            <button type="submit" onClick={createPDF} className="btn btn-primary my-3 me-3">Download</button>
-        </div>
-    } else {
-        Button =
-        <div>
-            <button type="submit" onClick={(e) => {handleClick(e, step -1)}} className="btn btn-primary my-3 me-3">Previous</button>
-            <button type="submit" onClick={(e) => {handleClick(e, step + 1)}} className="btn btn-primary my-3 me-3">Next</button>
-        </div>
+    const Button = () => {
+        if(step === 4){
+            return <div>
+                <button type="submit" onClick={(e) => {handleClick(e, step -1)}} className="btn btn-primary my-3 me-3">Previous</button>
+                <button type="submit" onClick={() => createPDF(data)} className="btn btn-primary my-3 me-3">Download</button>
+            </div>
         }
+            
+        return <div>
+                <button type="submit" onClick={(e) => {handleClick(e, step -1)}} className="btn btn-primary my-3 me-3">Previous</button>
+                <button type="submit" onClick={(e) => {handleClick(e, step + 1)}} className="btn btn-primary my-3 me-3">Next</button>
+            </div>
+    }
     
     return(
         // <Provider>
-        <Theme PageClass="" Class="my-5">
-            <div className="container">
+        // <Theme PageClass="" Class="my-5">
+            // <div className="container">
+            <>
                 <div className="position-relative m-5">
                     <div className="progress" style={{height: "3px"}}>
                         <div className="progress-bar" role="progressbar" style={{width: `${Left}%`}}></div>
@@ -107,33 +86,20 @@ export const CreateResume = () => {
 
                 <div className="p-3">
                     <div className="d-lg-flex my-3 justify-content-between">
-                        <Heading values={values['0']} step={step} handleChange={handleChange} />     
-                        <Experience values={values['1']} step={step} handleChange={handleChange} />
-                        <Education values={values['2']} step={step} handleChange={handleChange} />
-                        <Projects values={values['3']} step={step} handleChange={handleChange} />
-                        <Final values={values['4']} step={step} handleChange={handleChange} />
+                        <form className="row g-3 col">
+                            <Heading values={values['0']} step={step} handleChange={handleChange} />     
+                            <Experience values={values['1']} step={step} handleChange={handleChange} />
+                            <Education values={values['2']} step={step} handleChange={handleChange} />
+                            <Projects values={values['3']} step={step} handleChange={handleChange} />
+                            <Final values={values['4']} step={step} handleChange={handleChange} />
+                        </form>
                         {/* <div className="right mx-2 d-none d-lg-block text-center col">iframe</div> */}
                     </div>
-                    {/* { () => {
-                    if(step == 2){
-                        <div>
-                            <button type="submit" onClick={(e) => {handleClick(e, step -1)}} className="btn btn-primary my-3 me-3">Previous</button>
-                            <button type="submit" onClick={createPDF} className="btn btn-primary my-3 me-3">Download</button>
-                        </div>
-                    } else {
-                        return (
-                        <div>
-                            <button type="submit" onClick={(e) => {handleClick(e, step -1)}} className="btn btn-primary my-3 me-3">Previous</button>
-                            <button type="submit" onClick={(e) => {handleClick(e, step + 1)}} className="btn btn-primary my-3 me-3">Next</button>
-                        </div>
-                        )}
-                    }
-                    } */}
-                    {Button}
+                    <Button />
                 </div>
-
-            </div>
-        </Theme>
+            </>
+            // </div>
+        // </Theme>
         // </Provider>
     )
 }

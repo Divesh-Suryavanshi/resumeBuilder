@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom"
-import Theme from "../components/theme/Theme"
+// import Theme from "../components/theme/Theme"
 import image from "../components/images/toe.png"
 
 export const Welcome = () => {
 
     return(
-        <Theme Class="container mt-5 py-3" FooterClass="position-fixed bottom-0 w-100">
+        // <Theme Class="container mt-5 py-3" FooterClass="position-fixed bottom-0 w-100">
+        // <div className="container">
            <div className="d-lg-flex align-items-center">
                <div className="container-fluid">
                    {/* <h1>Why you need a better looking resume?</h1> */}
@@ -19,6 +20,7 @@ export const Welcome = () => {
                 <img src={image} className="img-fluid" />
                 </div>
            </div>
-        </Theme>
+        // </div>
+        // </Theme>
     )
 }

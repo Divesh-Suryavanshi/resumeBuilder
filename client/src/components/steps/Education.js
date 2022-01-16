@@ -8,7 +8,7 @@ const Education = ({step, values, handleChange}) => {
         return null;
 
     return (
-        <form className="row g-3 col">
+        <>
             <H2>Tell us about your Education</H2>
             <Row id="instituteName" label="Institute Name" sz="12" value={values.instituteName} onChange={handleChange} />
             <Row id="country" sz="4" label="Country" value={values.country} onChange={handleChange} />
@@ -18,11 +18,7 @@ const Education = ({step, values, handleChange}) => {
             <Row id="fOS" label="Field of study" value={values.fOS} sz="" onChange={handleChange} />
             <Row id="sDate" label="Start Date" value={values.sDate} type="Date" onChange={handleChange} />
             <Row id="eDate" label="End Date" value={values.eDate} type="Date" onChange={handleChange} />
-            {/* <div className="col-md-12">
-                <label for="Job Description" className="form-label"> Job Description</label>
-                <textarea id="Job Description" className="form-control" />
-            </div> */}
-        </form>
+        </>
     )
 }
 

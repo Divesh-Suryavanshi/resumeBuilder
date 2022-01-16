@@ -20,7 +20,8 @@ const Heading = ({step, values, handleChange}) => {
     // }
     
     return(
-            <form className="row g-3 col">
+            // <form className="row g-3 col">
+            <>
                 <H2>How should your recruiter call you?</H2>
                 <Row id="firstName" label="First Name" value={values.firstName} onChange={handleChange} />
                 <Row id="lastName" label="Last Name" value={values.lastName} onChange={handleChange} />
@@ -43,7 +44,8 @@ const Heading = ({step, values, handleChange}) => {
                 {/* <div className="col-12">
                     <button type="submit" onClick={handleClick} className="btn btn-primary btn">Next</button>
                 </div> */}
-            </form>
+            </>
+            // </form>
     )
 }
 export default Heading;

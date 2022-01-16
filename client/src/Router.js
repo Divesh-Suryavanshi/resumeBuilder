@@ -1,17 +1,20 @@
-// import logo from "./logo.svg";
-import { BrowserRouter, Routes, Route, withRouter } from "react-router-dom";
-import "./App.css";
-// import ResponsiveAppBar from "./components/ResponsiveAppBar";
+// import { Fragment } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { NavBar, Footer } from "./components/common";
 import {Welcome, CreateResume} from "./pages";
 
 const Router = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Welcome />} />
-        <Route exact path="/edit/resume" element={<CreateResume />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+      <NavBar />
+      <div className="container">
+        <Routes>
+          <Route exact path="/" element={<Welcome />} />
+          <Route exact path="/edit/resume" element={<CreateResume />} />
+        </Routes>
+        </div>
+      <Footer />
+      </BrowserRouter>
   );
 };
 

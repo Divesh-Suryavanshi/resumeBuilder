@@ -15,7 +15,7 @@ const Experience = ({step, values, handleChange}) => {
     }
     
     return (
-        <form className="row g-3 col">
+        <>
             <H2>Tell us about your most recent job</H2>
             <Row label="Company Name" id="cName" value={values.cName} onChange={handleChange} />
             <Row label="Job Title" id="job" value={values.job} onChange={handleChange} />
@@ -28,7 +28,7 @@ const Experience = ({step, values, handleChange}) => {
                 <label for="Job Description" className="form-label"> Job Description</label>
                 <textarea id="Job Description" className="form-control" name="jobDesc" value={values.jobDesc} onChange={handleChange} />
             </div>
-        </form>
+        </>
     )
 }
 

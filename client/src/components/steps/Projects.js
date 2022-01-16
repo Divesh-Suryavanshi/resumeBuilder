@@ -8,7 +8,7 @@ const Projects = ({step, values, handleChange}) => {
     }
     
     return(
-        <form className="row g-3 col">
+        <>
             <H2>List down your projects(Max-2)</H2>
             <Row id="name" label="Project Name" value={values.name} onChange={handleChange} />
             <div className="col-md-12">
@@ -20,7 +20,7 @@ const Projects = ({step, values, handleChange}) => {
                 <label for="desc2" className="form-label">Project-2 Description</label>
                 <textarea className="form-control" id="desc2" label="Project-2 Description" name="desc2" value={values.desc2} rows="3" onChange={handleChange} sz="12" />
             </div>
-        </form>    
+        </>
     )
 }
 

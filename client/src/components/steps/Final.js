@@ -8,7 +8,7 @@ const Final = ({step, values, handleChange}) => {
     }
 
     return(
-        <form className="row g-3 col">
+        <>
             <H2>Final Stage - About</H2>
             <Row label="Position" id="position" value={values.position} onChange={handleChange} />
             <div className="col-md-12">
@@ -17,7 +17,7 @@ const Final = ({step, values, handleChange}) => {
             </div>
             <Row label="Skills" id="skills" value={values.skills} onChange={handleChange} />
             <Row label="Interests" id="interests" value={values.interests} onChange={handleChange} />
-        </form>
+        </>
     )
 }
 
