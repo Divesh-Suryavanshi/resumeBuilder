@@ -1,5 +1,4 @@
-// import H2 from "../form/H2"
-// import Row from "../form/Row";
+// import {Row, H2} from "./common/";
 
 // const Skill = () => {
 //      if( step !== 0 ){
