@@ -6,13 +6,13 @@ const cors = require("cors")
 const pdf = require("html-pdf")
 
 const options = {
-	height: "35cm",
-	width: "21cm",
-	timeout: "6000",
+  height: "35cm",
+  width: "21cm",
+  timeout: "6000",
 };
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3080;
 
 // Third party middlewares
 app.use(cors())
@@ -34,7 +34,7 @@ app.post("/api/create-pdf", (req, res) => {
   // console.log(html);
 
   pdf.create(html, options).toFile(`Resume.pdf`, (err) => {
-    if(err) {
+    if (err) {
       console.log(err);
       res.send(Promise.reject());
     }
