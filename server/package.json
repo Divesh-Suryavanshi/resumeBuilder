@@ -4,7 +4,7 @@
   "description": "A simple easy to use resume builder.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js localhost 3080"
   },
   "author": "Divesh",
   "license": "ISC",
