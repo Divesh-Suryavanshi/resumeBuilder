@@ -6,9 +6,10 @@ const cors = require("cors")
 const pdf = require("html-pdf")
 
 const options = {
-  height: "35cm",
-  width: "21cm",
-  timeout: "6000",
+  format: "A4",
+  orientation: "portrait",
+  type: "pdf",
+  timeout: 6000
 };
 
 const app = express();
