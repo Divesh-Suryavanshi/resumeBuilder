@@ -1,6 +1,6 @@
 
 module.exports = (values) => {
-    
+
     let htmlTemplate = `
         <!DOCTYPE html>
         <html lang="en">
@@ -140,27 +140,27 @@ module.exports = (values) => {
                 background: #79a9ce;
                 }
             </style>
-            <title>${values['0'].firstName}</title>
+            <title>${values['Heading'].firstName}</title>
         </head>
         <body>
 
         <div class="container">
         <div class="header">
             <div class="full-name">
-            <span class="first-name">${values['0'].firstName}</span> 
-            <span class="last-name">${values['0'].lastName}</span>
+            <span class="first-name">${values['Heading'].firstName}</span> 
+            <span class="last-name">${values['Heading'].lastName}</span>
             </div>
             <div class="contact-info">
             <span class="email">Email: </span>
-            <span class="email-val">${values['0'].email}</span>
+            <span class="email-val">${values['Heading'].email}</span>
             <span class="separator"></span>
             <span class="phone">Phone: </span>
-            <span class="phone-val">${values['0'].phone}</span>
+            <span class="phone-val">${values['Heading'].phone}</span>
             </div>
             
             <div class="about">
-                <span class="position">${values['4'].position}</span>
-                <span class="desc">${values['4'].summary}</span>
+                <span class="position">${values['Final'].position}</span>
+                <span class="desc">${values['Final'].summary}</span>
             </div>
         </div>
         <div class="details">
@@ -169,14 +169,14 @@ module.exports = (values) => {
             <div class="section__list">
                 <div class="section__list-item">
                 <div class="left">
-                        <div class="name">${values['1'].cName}</div>
-                        <div class="addr">${values['1'].city}, ${values['1'].state}, ${values['1'].country}</div>
+                        <div class="name">${values['Experience'].cName}</div>
+                        <div class="addr">${values['Experience'].city}, ${values['Experience'].state}, ${values['Experience'].country}</div>
                 </div>
                 <div class="right">
-                        <div class="name">${values['1'].job}</div>
+                        <div class="name">${values['Experience'].job}</div>
                         <div class="duration"><small>Sep 2020 - July 2024</small></div>
                 </div>
-                <div class="desc" style="margin-top: 1rem">${values['1'].jobDesc}</div>
+                <div class="desc" style="margin-top: 1rem">${values['Experience'].jobDesc}</div>
                 </div>
 
             </div>
@@ -186,12 +186,12 @@ module.exports = (values) => {
             <div class="section__list">
                 <div class="section__list-item">
                 <div class="left">
-                    <div class="name">${values['2'].instituteName}</div>
+                    <div class="name">${values['Education'].instituteName}</div>
                     <div class="addr">Meerut, Uttar Pradesh</div>
                     <div class="duration"><small>Sep 2020 - July 2024</small></div>
                 </div>
                 <div class="right">
-                    <div class="name">${values['2'].degree} in ${values['2'].fOS}</div>
+                    <div class="name">${values['Education'].degree} in ${values['Education'].fOS}</div>
                 </div>
                 </div>
                 <div class="section__list-item">
@@ -212,13 +212,13 @@ module.exports = (values) => {
             <div class="section__title">Projects</div> 
             <div class="section__list">
                     <div class="section__list-item">
-                    <div class="name">${values['3'].name}</div>
-                    <div class="text">${values['3'].desc}</div>
+                    <div class="name">${values['Projects'].name}</div>
+                    <div class="text">${values['Projects'].desc}</div>
                 </div>
                 
                 <div class="section__list-item">
-                    <div class="name">${values['3'].name2}</div>
-                    <div class="text">${values['3'].desc2}</div>
+                    <div class="name">${values['Projects'].name2}</div>
+                    <div class="text">${values['Projects'].desc2}</div>
                 </div>
             </div>
             </div>
@@ -278,7 +278,7 @@ module.exports = (values) => {
             </div>
             <div class="section__list">
                 <div class="section__list-item">
-                        ${values['4'].interests}
+                        ${values['Final'].interests}
                 </div>
             </div>
             </div>
