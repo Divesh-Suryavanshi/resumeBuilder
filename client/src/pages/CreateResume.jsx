@@ -12,7 +12,7 @@ import {
 import { ProgressBar, FormButton } from "../components/core/form/common";
 
 // import ResumeContext from '../components/context/ResumeContext';
-import resumeData from "../components/context/resumeData";
+import resumeData from "../context/resumeData";
 
 const formState = ["Heading", "Experience", "Education", "Projects", "Final"];
 
