@@ -9,7 +9,7 @@ const createPDF = (data) => {
                 .get('/api/fetch-pdf', { responseType: 'arraybuffer' })
                 .then(res => {
                     const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
-                    saveAs(pdfBlob, `${data['0'].firstName}'s Resume.pdf`);
+                    saveAs(pdfBlob, `${data['Heading'].firstName}'s Resume.pdf`);
                 })
                 .catch(err => {
                     console.log(err);
