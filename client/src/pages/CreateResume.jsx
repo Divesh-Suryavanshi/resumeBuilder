@@ -20,7 +20,6 @@ export const CreateResume = () => {
     const [formData, setFormData] = useState(resumeData);
 
     const { step } = formData;
-    // console.log(formState);
 
     const setStep = (val) => {
         setFormData({ ...formData, step: val });
@@ -32,14 +31,11 @@ export const CreateResume = () => {
     };
 
     const handleChange = ({ target: { value, name } }) => {
-        // setForm step={step}DhandleClick={handleClick} ata({...formData, [name]: value});
         setFormData({
             ...formData,
-            [step]: { ...formData[formData.step], [name]: value },
+            [formState[step]]: { ...formData[formState[step]], [name]: value },
         });
     };
-
-    // console.log({...formData, [0]: { ...formData[formData.step], ["divesh"] : 7 } })
 
     const Form = [
         <Heading
