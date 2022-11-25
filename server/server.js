@@ -6,6 +6,11 @@ const cors = require("cors")
 const pdf = require("html-pdf")
 
 const options = {
+  childProcessOptions: {
+    env: {
+      OPENSSL_CONF: '/dev/null'
+    }
+  },
   format: "A4",
   orientation: "portrait",
   type: "pdf",
